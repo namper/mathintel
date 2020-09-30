@@ -1,3 +1,4 @@
 django==3.1.1
 graphene==2.1.8
 graphene-django==2.13.0
+django-graphql-auth==0.3.12
