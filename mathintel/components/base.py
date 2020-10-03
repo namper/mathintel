@@ -12,11 +12,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # apps
     'user.apps.UserConfig',
+    'resume.apps.ResumeConfig',
     # modules
     'graphene_django',
     'graphql_auth',
     'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
     'django_filters',
+    'versatileimagefield',
 ]
 
 MIDDLEWARE = [
