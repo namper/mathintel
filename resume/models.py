@@ -19,10 +19,10 @@ class Journal(SoftDeletionModel):
 
 class Paper(SoftDeletionModel):
     journal = models.ForeignKey(to='Journal', on_delete=models.PROTECT)
-    resume = models.ForeignKey(to='Resume', related_name='papers', on_delete=models.PROTECT)
+    resume = models.ForeignKey(to='Resume', related_name='papers', on_delete=models.PROTECT, blank=True, null=True)
 
-    users = models.ManyToManyField(to='user.User', related_name='papers')
-    legacy_users = models.ManyToManyField(to='user.LegacyUser', related_name='papers')
+    users = models.ManyToManyField(to='user.User', related_name='papers', blank=True)
+    legacy_users = models.ManyToManyField(to='user.LegacyUser', related_name='papers', blank=True)
 
     @property
     def authors(self):
