@@ -4,6 +4,7 @@ from mathintel.settings import BASE_DIR
 DEBUG = False
 
 INSTALLED_APPS = [
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

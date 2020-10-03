@@ -1,4 +1,16 @@
+from mathintel.settings import BASE_DIR
+import os
+
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_common')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_DIRS = (
+    # os.path.join(BASE_DIR, 'node/dist'),
+    os.path.join(BASE_DIR, 'static'),
+)
 
 VERSATILEIMAGEFIELD_SETTINGS = {
     'cache_length': 2592000,  # 30
@@ -12,6 +24,4 @@ VERSATILEIMAGEFIELD_SETTINGS = {
     'progressive_jpeg': False
 }
 
-CKEDITOR_UPLOAD_PATH = 'uploads/'
-
-# CKEDITOR_CONFIGS = {}
+CKEDITOR_UPLOAD_PATH = 'ckeditor/'

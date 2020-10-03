@@ -15,6 +15,13 @@ class Country(SoftDeletionModel):
         ppoi_field='interest_point',
     )
 
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _('Country')
+        verbose_name_plural = _('Countries')
+
 
 class LegacyUser(SoftDeletionModel):
     """ Model To Define Legacy Scientist e.g Newton, Weierstrass, Gödel ... """
@@ -24,6 +31,13 @@ class LegacyUser(SoftDeletionModel):
         to='Country', related_name='legacy_users',
         on_delete=models.PROTECT, null=True, blank=True
     )
+
+    @property
+    def full_name(self):
+        return f'{self.first_name} {self.last_name}'
+
+    def __str__(self):
+        return self.full_name
 
 
 class User(AbstractUser):

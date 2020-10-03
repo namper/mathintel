@@ -1,3 +1,5 @@
 from django.contrib import admin
+from user.models import User, LegacyUser, Country
 
-# Register your models here.
+# @TODO: modify
+admin.site.register([User, LegacyUser, Country], )

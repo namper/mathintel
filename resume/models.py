@@ -9,6 +9,13 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class Journal(SoftDeletionModel):
     title = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = _('Journal')
+        verbose_name_plural = _('Journals')
+
 
 class Paper(SoftDeletionModel):
     journal = models.ForeignKey(to='Journal', on_delete=models.PROTECT)
@@ -34,6 +41,13 @@ class University(SoftDeletionModel):
     title = models.CharField(max_length=255)
     country = models.ForeignKey(to='user.Country', on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = _('University')
+        verbose_name_plural = _('Universities')
+
 
 class Field(SoftDeletionModel):
     title = models.CharField(max_length=255)
@@ -42,6 +56,13 @@ class Field(SoftDeletionModel):
 
     users = models.ManyToManyField(to='user.User', related_name='fields')
     legacy_users = models.ManyToManyField(to='user.LegacyUser', related_name='fields')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = _('Field')
+        verbose_name_plural = _('Fields')
 
 
 class Resume(SoftDeletionModel):

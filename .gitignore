@@ -29,6 +29,8 @@ coverage.xml
 local.py
 db.sqlite3
 db.sqlite3-journal
+media
+__sized__
 
 
 # Celery stuff
