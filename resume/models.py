@@ -47,3 +47,7 @@ class Field(SoftDeletionModel):
 class Resume(SoftDeletionModel):
     publisher = models.ForeignKey(to='user.User', related_name='published_resumes', on_delete=models.CASCADE)
     description = RichTextUploadingField()
+
+    class Meta:
+        verbose_name = _('Resume')
+        verbose_name_plural = _('Resumes')
